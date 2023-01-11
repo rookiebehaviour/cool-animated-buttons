@@ -12,23 +12,35 @@ body {
   padding: 20px;
   margin: 0;
 }
+
 button {
   margin: 15px;
   font-size: 18px;
 }
 
 .btn {
+  background-color: var(--background-color);
   color: #222;
   border: none;
   outline: none;
   position: relative;
-  padding: 20px;
-  background-color: var(--background-color);
+  padding: 0.5em 1em;
   cursor: pointer;
 
   --background-color: #e3e3e3;
   --border-size: 3px;
   --accent-color: #0af;
+  --pop-pink: #ffc0cb;
+  --red-gradient: radial-gradient(
+    circle at 50.4% 50.5%,
+    rgb(251, 32, 86) 0%,
+    rgb(135, 2, 35) 90%
+  );
+  --blue-gradient: linear-gradient(
+    1.3deg,
+    rgb(91, 117, 163) 11.4%,
+    rgb(68, 98, 128) 77%
+  );
 }
 
 .btn.btn-border-pop::before {
@@ -39,7 +51,7 @@ button {
   right: 0;
   bottom: 0;
   z-index: -1;
-  border: var(--border-size) solid var(--background-color);
+  border: var(--border-size) solid var(--pop-pink);
   transition: top, left, right, bottom, 100ms ease-in-out;
 }
 
@@ -59,7 +71,7 @@ button {
   right: 0;
   bottom: 0;
   z-index: -1;
-  background-color: var(--accent-color);
+  background: var(--red-gradient);
   transition: top, left, right, bottom, 100ms ease-in-out;
   transform: scaleX(0);
   transform-origin: left;
@@ -119,7 +131,7 @@ button {
   right: 0;
   bottom: 0;
   height: var(--border-size);
-  background-color: var(--accent-color);
+  background: var(--blue-gradient);
   transition: transform 300ms ease-in-out;
 
   transform: scaleX(0);
